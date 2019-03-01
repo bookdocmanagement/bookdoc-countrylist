@@ -1,9 +1,8 @@
 # Countrylist
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/countrylist`. To experiment with that code, run `bin/console` for an interactive prompt.
+**Countrylist** is a simple ruby gem to get list of [countries, states, cities]. Also you can get currency, country flag, time zone with offset and dialing code for each country.
 
-TODO: Delete this and the text above, and describe your gem
-
+currently supported country codes: `['MY', 'SG', 'HK', 'TH', 'PHL', 'ID']`
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -16,20 +15,38 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install countrylist
-
 ## Usage
 
-TODO: Write usage instructions here
+#### get all countries
+
+```ruby
+Countrylist.get_countries
+```
+
+#### get country info
+
+```ruby
+Countrylist.get_country_info(country_code) 
+```
+
+#### get country image
+
+```ruby
+Countrylist.get_country_image(country_code) 
+```
+
+#### get country states
+
+```ruby
+Countrylist.get_states(country_code) 
+```
+
+#### get a specific state cities
+
+```ruby
+Countrylist.get_cities(country_code, state_name) 
+```
 
 ## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/countrylist.
+* all data is stored in `lib/db/data.csv` file.
+* images should be added to `vendor/assets/images` folder.
